@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "anjani.koohiiclient.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"client": [
+		"client.EntityRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

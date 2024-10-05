@@ -14,13 +14,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class EntityRendererMixin<T extends Entity> {
 
     @Inject(method = "renderLabelIfPresent", at = @At("HEAD"), cancellable = true)
-    private void onRenderLabel(T entity, Text text, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-        // Check if the entity has a custom nametag
+    private <T extends Entity> void onRenderLabel(T entity, Text text, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
+        
         if (entity.hasCustomName() || entity.isCustomNameVisible()) {
-            // Cancel the vanilla nametag rendering
+
             ci.cancel();
             
-            // Use our custom NametagRenderer to render the nametag
             anjani.koohiiclient.renderer.NametagRenderer.renderCustomNametag(entity, text, matrices, vertexConsumers, light);
         }
     }

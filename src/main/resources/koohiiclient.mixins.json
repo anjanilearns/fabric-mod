@@ -5,9 +5,6 @@
 	"mixins": [
 		"ExampleMixin"
 	],
-	"client": [
-		"client.EntityRendererMixin"
-	],
 	"injectors": {
 		"defaultRequire": 1
 	}
